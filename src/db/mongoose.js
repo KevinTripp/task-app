@@ -5,8 +5,8 @@ mongoose.connect(process.env.MONGODB_URL, {
     useCreateIndex: true,
     useFindAndModify: false
 }
-console.log('connected to mongoose!')
 )
+console.log('connected to mongoose!')
 
 // const Task = mongoose.model("Task", {
 //     descrption:{
