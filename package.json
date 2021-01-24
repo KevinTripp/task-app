@@ -12,18 +12,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@sendgrid/mail": "^6.3.1",
+    "@sendgrid/mail": "^6.5.5",
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.4.0",
-    "mongodb": "^3.5.5",
-    "mongoose": "^4.13.20",
-    "multer": "^1.4.1",
-    "sharp": "^0.21.1",
-    "validator": "^10.9.0"
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^4.13.21",
+    "multer": "^1.4.2",
+    "sharp": "0.27.0",
+    "validator": "^10.11.0"
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.7"
   }
 }
