@@ -66,7 +66,6 @@ userSchema.virtual('tasks', {
 userSchema.methods.toJSON = function(){
     const user = this
     const userObject = user.toObject()
-    console.log(9)
     delete userObject.password
     delete userObject.tokens
     delete userObject.avatar
@@ -76,7 +75,6 @@ userSchema.methods.toJSON = function(){
 
 userSchema.methods.generateAuthToken = async function () {
     const user = this
-    console.log(15)
     const token = jwt.sign({_id: user._id.toString()}, process.env.JWT_SECRET)
     user.tokens = user.tokens.concat({ token })
     await user.save()
@@ -104,13 +102,10 @@ userSchema.statics.findByCredentials = async(email, password) =>{
 // Hash the plain text password before saving
 userSchema.pre('save', async function(next) {
     const user = this
-    console.log(10)
     if (user.isModified('password')) {
-        console.log(12)
 
         user.password = await bcrypt.hash(user.password,8)  
     }
-    console.log(13)
 
     next()
 })
@@ -125,4 +120,3 @@ userSchema.pre('remove', async function(next) {
 const User = mongoose.model("User", userSchema)
 
 module.exports = User
-console.log(11)
