@@ -5,7 +5,6 @@ const jwt = require('jsonwebtoken')
 const Task = require('./task')
 
 const userSchema = new mongoose.Schema(
-    console.log(8)
     {
     
     name: {
