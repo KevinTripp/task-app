@@ -22,14 +22,26 @@ const avatar = multer({
 })
 
 router.post("/users", async (req, res) => {
+    console.log(1)
     const user = new User(req.body)
-    
+    console.log(2)
+
     try {
+        console.log(3)
+
         await user.save()
-        // sendWelcomeEmail(user.email, user.name)
+        console.log(4)
+
+        sendWelcomeEmail(user.email, user.name)
+        console.log(5)
+
         const token = await user.generateAuthToken()
+        console.log(6)
+
         res.status(201).send({user, token})
     } catch (e){
+        console.log(7)
+
         res.status(400).send(e)
     }
 })
