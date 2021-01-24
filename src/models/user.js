@@ -112,6 +112,7 @@ userSchema.pre('save', async function(next) {
     console.log(13)
 
     next()
+    console.log(14)
 })
 
 userSchema.pre('remove', async function(next) {
