@@ -105,8 +105,12 @@ userSchema.pre('save', async function(next) {
     const user = this
     console.log(10)
     if (user.isModified('password')) {
+        console.log(12)
+
         user.password = await bcrypt.hash(user.password,8)  
     }
+    console.log(13)
+
     next()
 })
 
